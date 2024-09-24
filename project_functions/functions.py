@@ -19,3 +19,9 @@ def transform_location(row):
     
     # Return the original Location if none of the conditions are met
     return location
+
+def replace_missing_values(value):
+    if value in ['NONE', 'nan', 'NaN', 'UNK','Unk','MISSING','Un'] or pd.isna(value):
+        return 'Unknown'
+    return value
+
